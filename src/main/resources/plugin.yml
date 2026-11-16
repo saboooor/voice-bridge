@@ -12,6 +12,9 @@ depend:
   - voicechat
   - PlasmoVoice
 
+softdepend:
+  - pv-addon-groups
+
 libraries:
   - org.jetbrains.kotlin:kotlin-stdlib:2.3.0
   - org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1

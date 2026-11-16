@@ -24,6 +24,11 @@ repositories {
     maven("https://repo.plasmoverse.com/snapshots") {
         name = "plasmoverse-snapshots"
     }
+
+    // Modrinth Maven (for pv-addon-groups)
+    maven("https://api.modrinth.com/maven") {
+        name = "modrinth"
+    }
 }
 
 dependencies {
@@ -38,6 +43,9 @@ dependencies {
     compileOnly("su.plo.voice.api:server-proxy-common:${project.properties["plasmo.voice.version"]}")
     compileOnly("su.plo.voice:protocol:${project.properties["plasmo.voice.version"]}")
     compileOnly("su.plo.slib:api-server:1.2.0")
+
+    // pv-addon-groups (optional runtime dependency)
+    compileOnly("maven.modrinth:pv-addon-groups:1.1.1")
 
     compileOnly(kotlin("stdlib"))
     compileOnly("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")

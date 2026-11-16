@@ -7,6 +7,7 @@ import java.util.logging.Logger
 data class BridgeConfig(
     val enabled: Boolean = true,
     val debug: Boolean = false,
+    val groupsEnabled: Boolean = true,
     val defaultDistance: Double = 48.0,
     val whisperMultiplier: Double = 0.33,
     val maxDistance: Double = 128.0,
@@ -42,6 +43,7 @@ data class BridgeConfig(
             return BridgeConfig(
                 enabled = yaml.getBoolean("bridge.enabled", true),
                 debug = yaml.getBoolean("bridge.debug", false),
+                groupsEnabled = yaml.getBoolean("groups.enabled", true),
                 defaultDistance = yaml.getDouble("proximity.default-distance", 48.0),
                 whisperMultiplier = yaml.getDouble("proximity.whisper-multiplier", 0.33),
                 maxDistance = yaml.getDouble("proximity.max-distance", 128.0),
@@ -58,6 +60,10 @@ data class BridgeConfig(
             bridge:
               enabled: true
               debug: false
+
+            groups:
+              # Bridge voice groups between Simple Voice Chat and pv-addon-groups
+              enabled: true
 
             proximity:
               # Default voice distance in blocks
